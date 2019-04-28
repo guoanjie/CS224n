@@ -72,7 +72,7 @@ class ParserModel(nn.Module):
         ###     Xavier Init: https://pytorch.org/docs/stable/nn.html#torch.nn.init.xavier_uniform_
         ###     Dropout: https://pytorch.org/docs/stable/nn.html#torch.nn.Dropout
 
-
+        raise NotImplementedError
         ### END YOUR CODE
 
     def embedding_lookup(self, t):
@@ -104,7 +104,7 @@ class ParserModel(nn.Module):
         ###     Embedding Layer: https://pytorch.org/docs/stable/nn.html#torch.nn.Embedding
         ###     View: https://pytorch.org/docs/stable/tensors.html#torch.Tensor.view
 
-
+        raise NotImplementedError
         ### END YOUR CODE
         return x
 
@@ -142,6 +142,6 @@ class ParserModel(nn.Module):
         ### Please see the following docs for support:
         ###     ReLU: https://pytorch.org/docs/stable/nn.html?highlight=relu#torch.nn.functional.relu
 
-
+        raise NotImplementedError
         ### END YOUR CODE
         return logits

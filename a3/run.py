@@ -46,7 +46,7 @@ def train(parser, train_data, dev_data, output_path, batch_size=1024, n_epochs=1
     ###     Adam Optimizer: https://pytorch.org/docs/stable/optim.html
     ###     Cross Entropy Loss: https://pytorch.org/docs/stable/nn.html#crossentropyloss
 
-
+    raise NotImplementedError
     ### END YOUR CODE
 
     for epoch in range(n_epochs):
@@ -99,7 +99,7 @@ def train_for_epoch(parser, train_data, dev_data, optimizer, loss_func, batch_si
             ### Please see the following docs for support:
             ###     Optimizer Step: https://pytorch.org/docs/stable/optim.html#optimizer-step
 
-
+            raise NotImplementedError
             ### END YOUR CODE
             prog.update(1)
             loss_meter.update(loss.item())
