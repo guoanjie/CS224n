@@ -168,8 +168,12 @@ class NMT(nn.Module):
         ###         https://pytorch.org/docs/stable/torch.html#torch.cat
         ###     Tensor Permute:
         ###         https://pytorch.org/docs/stable/tensors.html#torch.Tensor.permute
-
-
+        X = self.model_embeddings.source(source_padded)
+        enc_hiddens, (last_hidden, last_cell) = self.encoder(pack_padded_sequence(X, source_lengths))
+        enc_hiddens = pad_packed_sequence(enc_hiddens)[0].permute(1, 0, 2)
+        init_decoder_hidden = self.h_projection(last_hidden.permute(1, 0, 2).reshape(len(source_lengths), -1))
+        init_decoder_cell   = self.c_projection(  last_cell.permute(1, 0, 2).reshape(len(source_lengths), -1))
+        dec_init_state = (init_decoder_hidden, init_decoder_cell)
         ### END YOUR CODE
 
         return enc_hiddens, dec_init_state
